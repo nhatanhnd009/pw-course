@@ -11,4 +11,4 @@ if (120<=myHeight && myHeight<=190)
     {
     console.log("Ideal Weight:" , ideaWeight ,  "Min Weight:" , minWeight ,  "Max Weight:"+ maxWeight);
     }  
-//updated 1 chut code
+//updated 1 chut code de thoa mai moi gia tri, gia su chieu cao tb cua ng viet nam la tu 120 -> 190
