@@ -30,4 +30,4 @@ function filterValue(arr) {
     }
     console.log(newArr);
 };
-filterValue([1, 2, 3, 4, 5, 1, 6, 3, 8, 2, 9]);
+filterValue([1, 2, 3, 4, 5, 1, 6, 3, 8, 2, 9,9]);

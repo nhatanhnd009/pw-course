@@ -28,7 +28,7 @@ function calculator(arr) {
     console.log(sum + " " + maxNumber + " " + minNumber);
 
 }
-calculator([1, 4, 5, 6]);
+calculator([1, 4, 8, 6, 7]);
 
 //3. Tạo một mảng mới từ một mảng đã cho, trong đó mỗi phần tử được nhân đôi. Ví dụ mảng [1, 2, 3] thì mảng mới sẽ là [2, 4, 6] 
 console.log("Bai 3:");

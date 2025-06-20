@@ -16,7 +16,7 @@ calculator();
 console.log("Bai 2:");
 function printBangCuuChuong() {
     for (let i = 2; i <= 9; i++) {
-        console.log("\n Bang cuu chuong" + i);
+        console.log("\n Bang cuu chuong" + " " + i);
         for (let j = 1; j <= 10; j++) {
             console.log(i + "x" + j + "=" + (i * j));
         }
@@ -60,4 +60,4 @@ calTotal([
     { month: 10, total: 30 },
     { month: 11, total: 250 },
     { month: 12, total: 500 }
-])
+]);
