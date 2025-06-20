@@ -18,11 +18,12 @@ function filterValue(arr) {
     for (let i = 0; i < arr.length; i++) {
         let flag = true; //->neu ko trung se la true
         for (let j = 0; j < arr.length; j++) {
-            if (arr[i] === arr[j]) {
-                flag == false;
+            if (i !== j && arr[i] === arr[j]) {
+                flag = false;
+                break;
             }
         }
-        if (flag == true) {
+        if (flag) {
             newArr.push(arr[i]);
 
         }
