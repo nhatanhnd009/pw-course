@@ -88,18 +88,22 @@ updateEmail(["Van Anh", "Thuy Anh", "Ngoc"], ["b1@gmail.com", "b2@gmail.com", "b
 console.log(userList);
 
 //5. Viết một hàm tính điểm trung bình của các sinh viên dựa trên điểm số lưu trong một mảng các object. Biết object có cấu trúc như sau: {“name”: “Alex”, score: 85} 
-//console.log("Bai 5:");
-// let students = {
-//     st1: { "name": "Alex", score: 80 },
-//     st2: { "name": "Anna", score: 100 },
-//     st3: { "name": "Alice", score: 50 }
-// };
-// function avgPoint(studentArr) {
-//     let score = 0;
-//     for (let i = 0; i <= studentArr.length; i++) {
-//         let getScore = studentArr[i]["score"];
-//     }
-// }
+console.log("Bai 5:");
+function avgScore(studentArr) {
+    let totalScore = 0;
+    let avgScore = 0;
+    for (let i = 0; i < studentArr.length; i++) {
+        totalScore = totalScore + studentArr[i].score;
+        avgScore = totalScore / studentArr.length;
+    }
+    console.log(avgScore);
+}
+avgScore([
+    { "name": "Alex", score: 80 },
+    { "name": "Anna", score: 100 },
+    { "name": "Alice", score: 50 }
+]
+);
 
 //6.Viết hàm có tham số là tuổi, in ra mức giá vé vào cổng tùy theo độ tuổi: trẻ em dưới 5 tuổi miễn phí, người lớn từ 18 tuổi trở lên là 100k, và trẻ em từ 6 đến 17 tuổi là 50k.
 console.log("Bai 6:");
