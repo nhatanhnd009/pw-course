@@ -12,10 +12,21 @@ function revertString(string) {
 revertString("Playwright");
 
 //2. Lọc ra tất cả các phần tử duy nhất trong một mảng. Ví dụ với mảng [1, 2, 3, 1, 2, 4, 5] thì các phần tử duy nhất (xuất hiện 1 lần) là: [3, 4, 5
+console.log("Bai 2:");
+function filterValue(arr) {
+    let newArr = [];
+    for (let i = 0; i < arr.length; i++) {
+        let flag = true; //->neu ko trung se la true
+        for (let j = 0; j < arr.length; j++) {
+            if (arr[i] === arr[j]) {
+                flag == false;
+            }
+        }
+        if (flag == true) {
+            newArr.push(arr[i]);
 
-// function filterValue(arr) {
-//     let newArr = [];
-//     for (let value of arr) {
-
-//     }
-// }
+        }
+    }
+    console.log(newArr);
+};
+filterValue([1, 2, 3, 4, 5, 1, 6, 3, 8, 2, 9]);

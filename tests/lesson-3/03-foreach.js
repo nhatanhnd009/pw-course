@@ -32,9 +32,9 @@ calculator([1, 4, 5, 6]);
 
 //3. Tạo một mảng mới từ một mảng đã cho, trong đó mỗi phần tử được nhân đôi. Ví dụ mảng [1, 2, 3] thì mảng mới sẽ là [2, 4, 6] 
 console.log("Bai 3:");
-function createArr(arr){
+function createArr(arr) {
     let newArr = [];
-    arr.forEach((value) => newArr.push(value*2));
+    arr.forEach((value) => newArr.push(value * 2));
     console.log(newArr);
 };
-createArr([1,4,5]);
+createArr([1, 4, 5]);
