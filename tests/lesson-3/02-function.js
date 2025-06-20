@@ -41,7 +41,7 @@ console.log(convertResult);
 console.log("Bai 3:");
 function inputNumbers(arr) { // khoi tao ham input 1 mang so
     let i = 0;
-    for (i; i <= arr.length; i++) {
+    for (i; i < arr.length; i++) {
         let number = arr[i];
         let checkNumber = verifyNumber(number);
         if (checkNumber == true) {
@@ -51,23 +51,25 @@ function inputNumbers(arr) { // khoi tao ham input 1 mang so
 
 };
 function verifyNumber(number) { // khoi tao ham check so nguyen to
+    if (typeof number != "number") {
+        return false;
+    }
     if (number <= 1) {
         return false;
     }
-    else if (number === 2) { // 2 la so nguyen to chan duy nhat
+    if (number === 2) { // 2 la so nguyen to chan duy nhat
         return true;
     }
-    else {
-        let Itssqrt = Math.sqrt(number) //tinh can bac 2 cua number. vi du can bac 2 cua 16 la 2.828 se lay 1 va 2
-        for (j = 2; j <= Itssqrt; j++) {
-            if (number % j === 0) {
-                return false;
-            };
-        }
-        return true;
+    let Itssqrt = Math.sqrt(number) //tinh can bac 2 cua number. vi du can bac 2 cua 8 la 2.828 se lay 1 va 2
+    for (i = 2; i <= Itssqrt; i++) {
+        if (number % i === 0) {
+            return false;
+        };
     }
+    return true;
+
 };
-inputNumbers([-10, 0, 2, 1, 3, 6, 9, 19]);
+inputNumbers([-10, 0, 2, 1, 3, 6, 9, 19, "an"]);
 
 //4. Tạo một function để cập nhật email cho người dùng trong một danh sách, dựa trên tên người dùng. 
 console.log("Bai 4:");
