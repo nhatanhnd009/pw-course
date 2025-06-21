@@ -1,7 +1,7 @@
 //1. In ra tất cả các phần tử của một mảng. Ví dụ mảng [1, 2, 3] thì in ra 
 console.log("Bai 1:");
 function printArr(arr) {
-    let result = 0;
+    let result = "";
     arr.forEach((value) => result = (result + value + " "));
     console.log(result)
 }
@@ -14,7 +14,7 @@ function calculator(arr) {
     let maxNumber = arr[0];
     let minNumber = arr[0];
     arr.forEach((value) => sum = sum + value);
-    for (i = 0; i < arr.length; i++) {
+    for (let i = 0; i < arr.length; i++) {
 
         if (arr[i] > maxNumber) {
             maxNumber = arr[i];

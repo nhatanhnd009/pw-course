@@ -2,15 +2,15 @@
 console.log("Bai 1:");
 function calculator() {
     let sum = 0;
-    let i = 1;
-    for (i; i <= 100; i++) {
+    //let i = 1;
+    for (let i = 0; i <= 100; i++) {
         sum = sum + i;
     }
-    console.log("Sum" + " " + sum);
-
+    return sum;
 
 }
 calculator();
+console.log("Sum" + " " + sum);
 
 //2. In bảng cửu chương từ 2 đến 9. 
 console.log("Bai 2:");

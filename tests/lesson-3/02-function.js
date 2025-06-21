@@ -9,10 +9,10 @@ function checkBMI(height, weight) {
         if (bmi >= 0 && bmi < 18.5) {
             return "Thieu can";
         }
-        else if (bmi >= 18.5 && bmi < 25) {
+        if (bmi >= 18.5 && bmi < 25) {
             return "Binh thuong";
         }
-        else if (bmi >= 25 && bmi < 30) {
+        if (bmi >= 25 && bmi < 30) {
             return "Thua can";
         }
         else {
@@ -40,12 +40,12 @@ console.log(convertResult);
 // 3. Viết một hàm để lọc ra các số nguyên tố từ một mảng số đã cho. 
 console.log("Bai 3:");
 function inputNumbers(arr) { // khoi tao ham input 1 mang so
-    let i = 0;
-    for (i; i < arr.length; i++) {
+    let newArr = [];
+    for (let i = 0; i < arr.length; i++) {
         let number = arr[i];
         let checkNumber = verifyNumber(number);
         if (checkNumber == true) {
-            console.log(number + " " + "la so nguyen to");
+            newArr.push(number);
         }
     }
 
@@ -61,7 +61,7 @@ function verifyNumber(number) { // khoi tao ham check so nguyen to
         return true;
     }
     let Itssqrt = Math.sqrt(number) //tinh can bac 2 cua number. vi du can bac 2 cua 8 la 2.828 se lay 1 va 2
-    for (i = 2; i <= Itssqrt; i++) {
+    for (let i = 2; i <= Itssqrt; i++) {
         if (number % i === 0) {
             return false;
         };
@@ -96,8 +96,8 @@ function avgScore(studentArr) {
     let avgScore = 0;
     for (let i = 0; i < studentArr.length; i++) {
         totalScore = totalScore + studentArr[i].score;
-        avgScore = totalScore / studentArr.length;
     }
+    avgScore = totalScore / studentArr.length;
     console.log(avgScore);
 }
 avgScore([
@@ -112,21 +112,22 @@ console.log("Bai 6:");
 function printPrice(year) {
     let price = 0;
     if (year >= 0 && year < 5) {
-        price = 0;
-        console.log("Gia ve" + " " + price);
+        return price = 0;
+        //console.log("Gia ve" + " " + price);
 
     }
     else if (year >= 5 && year <= 17) {
-        price = 50000;
-        console.log("Gia ve" + " " + price);
+        return price = 50000;
+        //console.log("Gia ve" + " " + price);
 
     }
     else {
-        price = 100000;
-        console.log("Gia ve" + " " + price);
+        return price = 100000;
+        //console.log("Gia ve" + " " + price);
     }
 };
 printPrice(90);
+console.log("Gia ve" + " " + price);
 
 //7. Viết hàm in ra tên tháng dựa vào số tháng được nhập vào. Sử dụng câu lệnh switch...case để xử lý.
 console.log("Bai 7:");
@@ -138,26 +139,37 @@ function printMonth(a) {
             break;
         case 2:
             console.log("Fed");
+            break;
         case 3:
             console.log("Mar");
+            break;
         case 4:
             console.log("Apr");
+            break;
         case 5:
             console.log("May");
+            break;
         case 6:
             console.log("Jun");
+            break;
         case 7:
             console.log("July");
+            break;
         case 8:
             console.log("Aug");
+            break;
         case 9:
             console.log("Sep");
+            break;
         case 10:
             console.log("Oct");
+            break;
         case 11:
             console.log("Nov");
+            break;
         case 12:
             console.log("Dec");
+            break;
         default:
             console.log("Invalid month");
     }
