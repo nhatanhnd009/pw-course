@@ -9,7 +9,7 @@ function calculator() {
     return sum;
 
 }
-calculator();
+let sum = calculator();
 console.log("Sum" + " " + sum);
 
 //2. In bảng cửu chương từ 2 đến 9. 
