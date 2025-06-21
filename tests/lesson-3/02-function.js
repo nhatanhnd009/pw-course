@@ -48,7 +48,7 @@ function inputNumbers(arr) { // khoi tao ham input 1 mang so
             newArr.push(number);
         }
     }
-
+    console.log(newArr);
 };
 function verifyNumber(number) { // khoi tao ham check so nguyen to
     if (typeof number != "number") {
@@ -69,7 +69,7 @@ function verifyNumber(number) { // khoi tao ham check so nguyen to
     return true;
 
 };
-inputNumbers([-10, 0, 2, 1, 3, 6, 9, 19, "an"]);
+inputNumbers([-10, 0, 2, 1, 3, "39", 6, 9, 19, "an"]);
 
 //4. Tạo một function để cập nhật email cho người dùng trong một danh sách, dựa trên tên người dùng. 
 console.log("Bai 4:");
@@ -112,22 +112,22 @@ console.log("Bai 6:");
 function printPrice(year) {
     let price = 0;
     if (year >= 0 && year < 5) {
-        return price = 0;
+        price = 0;
         //console.log("Gia ve" + " " + price);
 
     }
     else if (year >= 5 && year <= 17) {
-        return price = 50000;
+        price = 50000;
         //console.log("Gia ve" + " " + price);
 
     }
     else {
-        return price = 100000;
+        price = 100000;
         //console.log("Gia ve" + " " + price);
     }
+    console.log("Gia ve " + price);
 };
 printPrice(90);
-console.log("Gia ve" + " " + price);
 
 //7. Viết hàm in ra tên tháng dựa vào số tháng được nhập vào. Sử dụng câu lệnh switch...case để xử lý.
 console.log("Bai 7:");
