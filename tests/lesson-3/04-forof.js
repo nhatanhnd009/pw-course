@@ -1,6 +1,5 @@
 //1. Tạo mảng chứa các kí tự nghịch đảo từ một chuỗi đã cho. Ví dụ với chuỗi ”Playwright”
 console.log("Bai 1:");
-
 function revertString(string) {
     let arr = [];
     for (let i = string.length - 1; i >= 0; i--) {

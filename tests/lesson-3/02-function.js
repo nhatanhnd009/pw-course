@@ -6,13 +6,13 @@ function checkBMI(height, weight) {
         return "Invalid value";
     }
     else {
-        if (bmi >= 0 && bmi < 18.5) {
+        if (bmi < 18.5) {
             return "Thieu can";
         }
-        if (bmi >= 18.5 && bmi < 25) {
+        else if (bmi < 25) {
             return "Binh thuong";
         }
-        if (bmi >= 25 && bmi < 30) {
+        else if (bmi < 30) {
             return "Thua can";
         }
         else {

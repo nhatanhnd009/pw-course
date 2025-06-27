@@ -19,8 +19,8 @@ function calculator(arr) {
         if (arr[i] > maxNumber) {
             maxNumber = arr[i];
 
-        };
-        if (arr[i] < minNumber) {
+        }
+        else if (arr[i] < minNumber) {
             minNumber = arr[i];
 
         };

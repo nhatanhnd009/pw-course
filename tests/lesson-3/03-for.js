@@ -7,7 +7,6 @@ function calculator() {
         sum = sum + i;
     }
     return sum;
-
 }
 let sum = calculator();
 console.log("Sum" + " " + sum);
