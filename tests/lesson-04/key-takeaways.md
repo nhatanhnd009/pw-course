@@ -9,6 +9,8 @@
     --  1 cấu trúc thẻ đầy đủ: <label for="username" id="preceding">Username:</label>
     -- thẻ mở (<label for="username" id="preceding">) text/nội dung (Username) thẻ đóng </label>. Trong thẻ mở sẽ chứa thuộc tính (id) và giá trị của thuộc tính(preceding)
     -- Thẻ tự đóng: sẽ khác cấu trúc bt, thường cho những phần tử ko có nội dung hoặc ko có phần tử khác. Ví dụ như thẻ image, thẻ br. <img src="image.jgp alt="Image des"/>
+[Element](tests/lesson-04/Image/Element.png)
+
 - Các thẻ HTML thường gặp:
     -- Thẻ <div>: dùng để chia các khối
     -- Thẻ <h1>-> <h6> là thẻ heading dfung để tạo các header phân cấp
