@@ -16,11 +16,14 @@ test("Todo list", async ({ page }) => {
         }
     });
     await test.step("Remove odd-numbered tasks", async () => {
+        page.on('dialog', async dialog => {
+            await dialog.accept();
+        })
         for (let i = 1; i <= 100; i += 2) {
             let deleteButton = page.locator(`//button[@id="to-do-${i}-delete"]`);
-            page.once('dialog', async dialog => {
-                await dialog.accept();
-            });
+            // page.once('dialog', async dialog => {
+            //     await dialog.accept();
+            // }); // hàm này là chạy từng lần một khác với page.on là chạy cả page sẽ phải set ngoài
             await deleteButton.click();
             await page.waitForTimeout(100);
         }
