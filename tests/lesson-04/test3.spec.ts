@@ -1,6 +1,7 @@
 import { test } from "@playwright/test";
 
 test("Todo list", async ({ page }) => {
+    test.setTimeout(120000);
     await test.step("Navigate to material page", async () => {
         await page.goto("https://material.playwrightvn.com/");
     });
@@ -21,7 +22,7 @@ test("Todo list", async ({ page }) => {
                 await dialog.accept();
             });
             await deleteButton.click();
-            await page.waitForTimeout(200);
+            await page.waitForTimeout(100);
         }
 
     });
