@@ -11,10 +11,11 @@ test("personal-note", async ({ page }) => {
         const title = await item.locator('//*[@class="title-news"]/a').innerText();
         const description = await item.locator('//*[@class="description"]/a').innerText();
         if (title && description) {
+            //const obj = { title: title, description: description};
             lstData.push({ title, description });
         }
     }
-    console.log(lstData);
+    //console.log(lstData);
 
     await test.step("Navigate to material page", async () => {
         await page.goto("https://material.playwrightvn.com/");
