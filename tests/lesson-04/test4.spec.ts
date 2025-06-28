@@ -1,27 +1,44 @@
 import { test } from "@playwright/test";
 
 test("personal-note", async ({ page }) => {
+    test.setTimeout(1200000);
+    await page.goto('https://vnexpress.net/khoa-hoc-cong-nghe');
+    const article = await page.locator('//article[@class = "item-news item-news-common thumb-left"]');
+    const count = await article.count();
+    const lstData: any[] = [];
+    for (let i = 0; i < count; i++) {
+        const item = article.nth(i);
+        const title = await item.locator('//*[@class="title-news"]/a').innerText();
+        const description = await item.locator('//*[@class="description"]/a').innerText();
+        if (title && description) {
+            lstData.push({ title, description });
+        }
+    }
+    console.log(lstData);
+
     await test.step("Navigate to material page", async () => {
         await page.goto("https://material.playwrightvn.com/");
     });
 
-    await test.step("Click on Bài 3", async () => {
+    await test.step("Click on Bài 4", async () => {
         await page.click('//*[@href="04-xpath-personal-notes.html"]')
     });
 
-    await test.step("Add 10 notes", async () => {
-        for (let i = 1; i <= 10; i++) {
-            await page.locator('//input[@id ="note-title"]').fill(`Đề Tiếng Anh thi tốt nghiệp THPT 202${i}`);
-            await page.locator('//*[@id ="note-content"]').fill(`Đề Tiếng Anh thi tốt nghiệp THPT có: \n4${i} câu hỏi \ntrong 5${i} phút, giảm 10 câu so với năm ngoái`); // ko xuống dòng được
-            await page.click('//button[@id = "add-note"]');
-            await page.waitForTimeout(100);
+    /**
+     * Thêm mới 10 note có nội dung là tiêu đề và một phần ngắn (khoảng 3 dòng) tại báo https://vnexpress.net/khoa-hoc-cong-nghe
+     */
+    await test.step("Add 10 note", async () => {
+        for (let i = 0; i < lstData.length; i++) {
+            if (lstData[i]) {
+                await page.locator('//input[@id = "note-title"]').fill(`${lstData[i].title}`);
+                await page.locator('//textarea[@id = "note-content"]').fill(`${lstData[i].description}`);
+                await page.click('//button[@id = "add-note"]'); // click add task button sau moi lan add
+            }
         }
-
     });
 
-    await test.step("Search notes", async () => {
-        await page.locator('//input[@id = "search"]').fill("2025");
-        let result = await page.locator('//div[@id = "note-count"]').textContent();
-        console.log(result);
-    })
-})
+    await test.step("Search Item", async () => {
+        await page.locator('//input[@id = "search"]').fill("Vệ tinh NASA");
+    });
+
+});
